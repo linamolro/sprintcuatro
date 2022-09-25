@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href=''>
+    <title>Document</title>
+</head>
+<body>
+    {%csrf_token%}
+    <h1>Clientes</h1>
+    <section class = "sectiontres">
+        <table class = "tabla">
+            <!-- Encabezado tabla -->
+            <thead>
+                <tr> 
+                    <th>Primer Nombre</th>
+                    <th>Segundo Nombre</th> 
+                    <th>Primer Apellido</th>
+                    <th>Segundo Apellido</th>
+                    <th>Codigo Empresa</th>
+                    <th>Cargo</th>
+                    <th>Correo</th>
+                    <th>Direccion</th>
+                    <th>Celular</th>
+                    <th>Tipo de Contrato</th>
+                    <th>Profesion</th>
+                    <th>Banco</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in listadoempleados%}
+                <tr>
+                    <td>{{i.primer_nombre}}</td>
+                    <td>{{i.segundo_nombre}}</td>
+                    <td>{{i.primer_apellido}}</td>
+                    <td>{{i.segundo_apellido}}</td>                    
+                    <td>{{i.codigo_empresa}}</td>
+                    <td>{{i.cargo}}</td>
+                    <td>{{i.correo_empleado}}</td>
+                    <td>{{i.direccion_empleado}}</td>
+                    <td>{{i.celular_empleado}}</td>
+                    <td>{{i.tipo_contrato}}</td>
+                    <td>{{i.profesion}}</td>
+                    <td>{{i.banco}}</td>
+                </tr> 
+                {%endfor%}
+                <a href="">Ingresar Empleado</a>                 
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
